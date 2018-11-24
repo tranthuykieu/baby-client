@@ -14,16 +14,15 @@ class RegisterSister extends Component {
 
     state = {
         sister: {
-            username: '',
+            phoneNumber: '',
             password: '',
             fullname: '',
-            address: '',
-            district: '',
             city: '',
+            district: '',
+            address: '',
             sex: '',
             age: '',
             email: '',
-            phoneNumber: '',
             note: ''
         }
     }
@@ -31,7 +30,7 @@ class RegisterSister extends Component {
     _handleChange = (e) => {
         var preSister = this.state.sister;
         console.log('id: ' + e.target.id);
-        if (e.target.id == 0) preSister.username = e.target.value;
+        if (e.target.id == 0) preSister.phoneNumber = e.target.value;
         if (e.target.id == 1) preSister.password = e.target.value;
         if (e.target.id == 2) preSister.fullname = e.target.value;
         if (e.target.id == 3) preSister.address = e.target.value;
@@ -40,10 +39,14 @@ class RegisterSister extends Component {
         if (e.target.id == 6) preSister.sex = e.target.value;
         if (e.target.id == 7) preSister.age = e.target.value;
         if (e.target.id == 8) preSister.email = e.target.value;
-        if (e.target.id == 9) preSister.phoneNumber = e.target.value;
+        if (e.target.id == 9) preSister.avatar = e.target.value;
         if (e.target.id == 10) preSister.note = e.target.value;
         
         this.setState({ sister: preSister })
+    }
+
+    _handleFileUpload({}) {
+        // add code to upload file from PC
     }
 
     _handleRegister = (e) => {
@@ -62,11 +65,12 @@ class RegisterSister extends Component {
         return(
             <div className='container'>
                 <FormGroup>
-                    <CardTitle> REGISTER </CardTitle>
+                    <CardTitle> BABYSISTER REGISTER </CardTitle>
                     <Form >
+
                         <Nav>
-                            <Label> Username: </Label>
-                            <Input onChange={this._handleChange} type='text' id='0' required> </Input>
+                            <Label>Phone Number: </Label>
+                            <Input onChange={this._handleChange} type='text' id='0' required></Input>
                         </Nav>
                         <Nav>
                             <Label> Password: </Label>
@@ -77,17 +81,17 @@ class RegisterSister extends Component {
                             <Input onChange={this._handleChange} type='text' id='2' required></Input>
                         </Nav>
                         <Nav>
-                            <Label> Address: </Label>
-                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
+                            <Label>City: </Label>
+                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
                         </Nav>
                         <Nav>
                             <Label>District: </Label>
                             <Input onChange={this._handleChange} type='text' id='4' required></Input>
                         </Nav>
                         <Nav>
-                            <Label>City: </Label>
-                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
-                        </Nav>
+                            <Label> Address: </Label>
+                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
+                        </Nav>    
                         <Nav>
                             <Label>Sex: </Label>
                             <Input onChange={this._handleChange} type='select' id='6' required>
@@ -105,10 +109,12 @@ class RegisterSister extends Component {
                             <Label>Email: </Label>
                             <Input onChange={this._handleChange} type='text' id='8'></Input>
                         </Nav>
+
                         <Nav>
-                            <Label>Phone Number: </Label>
-                            <Input onChange={this._handleChange} type='text' id='9' required></Input>
+                            <Label>Avatar: </Label>
+                            <Input onChange={this._handleFileUpload} type='file' id='9'></Input>
                         </Nav>
+                        
                         <Nav>
                             <Label>Note: </Label>
                             <Input onChange={this._handleChange} type='text' id='10' maxLenght='200'></Input>
