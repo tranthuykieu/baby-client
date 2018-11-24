@@ -20,7 +20,6 @@ class RegisterParent extends Component {
             avatar: '',
             babyAge: '',
             babyGender: '',
-            babyPicture: '',
             note: ''
         }
     }
@@ -40,8 +39,7 @@ class RegisterParent extends Component {
         if (e.target.id == 9) preParent.avatar = e.target.value;
         if (e.target.id == 10) preParent.babyAge = e.target.value;
         if (e.target.id == 11) preParent.babyGender = e.target.value;
-        if (e.target.id == 12) preParent.babyPicture = e.target.value;
-        if (e.target.id == 13) preParent.note = e.target.value;
+        if (e.target.id == 12) preParent.note = e.target.value;
     }
 
     _handleFileUpload({}) {
@@ -119,19 +117,16 @@ class RegisterParent extends Component {
                         </Nav>
                         <Nav>
                             <Label>Baby's gender: </Label>
-                            <Input onChange={this._handleChange} type="select" id='11'></Input>
-                            <option></option>
-                            <option>Male</option>
-                            <option>Female</option>
+                            <Input onChange={this._handleChange} type="select" id='11'>
+                                <option></option>
+                                <option>Male</option>
+                                <option>Female</option> 
+                            </Input>
+                            
                         </Nav>
-                        <Nav>
-                            <Label>Baby's picture: </Label>
-                            <Input onChange={this._handleFileUpload} type='file' id='12'></Input>
-                        </Nav>
-
                         <Nav>
                             <Label>Note: </Label>
-                            <Input onChange={this._handleChange} type='textarea' maxLength='300' id='13'></Input>
+                            <Input onChange={this._handleChange} type='textarea' maxLength='300' id='12'></Input>
                         </Nav>
                         
                     </Form>
