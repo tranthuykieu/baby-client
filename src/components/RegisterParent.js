@@ -5,6 +5,12 @@ import { FormGroup, Form, Label, CardTitle,
 
 class RegisterParent extends Component {
 
+    state = {
+        parent: {
+            
+        }
+    }
+
     _handleChange = (e) => {
 
     }
