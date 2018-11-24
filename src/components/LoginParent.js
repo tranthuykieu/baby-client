@@ -45,7 +45,7 @@ class LoginParent extends Component {
               <CardTitle> PARENT LOGIN </CardTitle>
               <Form>
                 <Nav>
-                  <Label> Username: </Label>
+                  <Label> Phone number: </Label>
                   <Input
                     onChange={this._handleChange}
                     type="number"

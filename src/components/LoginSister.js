@@ -45,7 +45,7 @@ class LoginSister extends Component {
               <CardTitle> BABYSITTER LOGIN </CardTitle>
               <Form>
                 <Nav>
-                  <Label> Username: </Label>
+                  <Label> Phone number: </Label>
                   <Input
                     onChange={this._handleChange}
                     type="number"
