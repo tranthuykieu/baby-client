@@ -116,3 +116,20 @@
     color: #fff;
     text-align: center
 }
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login {
+    width: 400px;
+    height: auto;
+    border-radius: 25px;
+    border: 2px solid brown;
+    padding: 16px;
+    background-color: whitesmoke;
+    text-align: center
+}
