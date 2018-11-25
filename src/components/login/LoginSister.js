@@ -8,8 +8,8 @@ import {
   Nav,
   Button
 } from "reactstrap";
-import Example from "./Nav";
-import begin from "../img/begin.jpeg";
+import Example from "../Nav";
+import begin from "../../img/begin.jpeg";
 
 var background1 = {
   width: "100%",
@@ -26,7 +26,7 @@ const button = {
   margin: "10px 0px 0px 0px"
 };
 
-class LoginParent extends Component {
+class LoginSister extends Component {
   state = {
     parent: {}
   };
@@ -42,7 +42,7 @@ class LoginParent extends Component {
         <div style={background1} className="login-container">
           <div className="login">
             <FormGroup>
-              <CardTitle> PARENT LOGIN </CardTitle>
+              <CardTitle> BABYSITTER LOGIN </CardTitle>
               <Form>
                 <Nav>
                   <Label> Phone number: </Label>
@@ -74,4 +74,4 @@ class LoginParent extends Component {
   }
 }
 
-export default LoginParent;
+export default LoginSister;

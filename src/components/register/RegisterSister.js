@@ -45,8 +45,9 @@ class RegisterSister extends Component {
         this.setState({ sister: preSister })
     }
 
-    _handleFileUpload({}) {
+    _handleFileUpload(e) {
         // add code to upload file from PC
+        console.log(e.target.files[0]);
     }
 
     _handleRegister = (e) => {
@@ -112,7 +113,8 @@ class RegisterSister extends Component {
 
                         <Nav>
                             <Label>Avatar: </Label>
-                            <Input onChange={this._handleFileUpload} type='file' id='9'></Input>
+                            {/* <Input onChange={this._handleFileUpload} type='file' id='9'></Input> */}
+                            <Input onChange={this._handleChange} type='text' id='9'></Input> 
                         </Nav>
                         
                         <Nav>

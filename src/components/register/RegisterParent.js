@@ -6,6 +6,10 @@ import axios from 'axios';
 
 class RegisterParent extends Component {
 
+    componentDidMount() {
+
+    }
+
     state = {
         parent: {
             phoneNumber: '',
@@ -40,6 +44,8 @@ class RegisterParent extends Component {
         if (e.target.id == 10) preParent.babyAge = e.target.value;
         if (e.target.id == 11) preParent.babyGender = e.target.value;
         if (e.target.id == 12) preParent.note = e.target.value;
+
+        this.setState({ parent: preParent });
     }
 
     _handleFileUpload({}) {
@@ -48,13 +54,13 @@ class RegisterParent extends Component {
 
     _handleRegister = (e) => {
         
-        console.log(this.state.sister);
-        axios.post('http://localhost:1998/api/parents', this.state.sister )
+        console.log(this.state.parent);
+        axios.post('http://localhost:1998/api/parents', this.state.parent )
             .then( res => {
                 console.log(res);
                 this.props.history.push('/mainpage');
             })
-            .catch(err => console.log(err));
+            .catch(err => err);
     }
 
 
@@ -82,11 +88,11 @@ class RegisterParent extends Component {
                         </Nav>
                         <Nav>
                             <Label>District: </Label>
-                            <Input onChange={this.handleChange} type='text' id='4' required></Input>
+                            <Input onChange={this._handleChange} type='text' id='4' required></Input>
                         </Nav>
                         <Nav>
                             <Label> Address: </Label>
-                            <Input onChange={this.handleChange} type='text' id='5' required></Input>
+                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
                         </Nav>
                         <Nav>
                             <Label>Sex: </Label>
@@ -107,7 +113,8 @@ class RegisterParent extends Component {
                         </Nav>
                         <Nav>
                             <Label>Avatar:</Label>
-                            <Input onChange={this._handleFileUpload} type='file' id='9'></Input>
+                            {/* <Input onChange={this._handleFileUpload} type='file' id='9'></Input> */}
+                            <Input onChange={this._handleChange} type='text' id='9'></Input>
                         </Nav>
 
                         <h2>Baby's info:</h2>
