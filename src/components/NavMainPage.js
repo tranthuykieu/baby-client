@@ -72,7 +72,6 @@ class NavMainPage extends Component {
                             </Row>
                         </Nav>
                 </div>
-
         </div>
         );
     }

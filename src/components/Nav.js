@@ -36,12 +36,6 @@ var header = {
   fontSize: "2rem"
 }
 
-
-
-var right = {
-  textAlign: "right"
-}
-
 var floatright = {
   float: "right"
 }
@@ -75,7 +69,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-   {/*     <Navbar style={height} color="light" light expand="md">
+        <Navbar style={height} color="light" light expand="md">
           
           <NavbarBrand href="/">BabioService</NavbarBrand>
           <NavbarToggler onClick={this.toggleNav} />
@@ -89,35 +83,8 @@ export default class Example extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </Navbar> */} 
-          
-                
-          
-              <div style={main_nav}>
-                        <Nav navbar>
-                            <Row>
-                                <Col>
-                                  <h1 style={header}> BabioService </h1>
-                                </Col>
-                                <Col>
-                                    <img style={logo_icon} src={logo} alt="logo" />
-                                </Col>
-                                <Col style={inline}>
-                                    <Button style={floatright} color="danger"> Log out</Button>
-                                    <NavItem>
-                                        <NavLink style={floatright} href="/">Welcome, username</NavLink>
-                                        
-                                    </NavItem>
-                                    
-                                </Col>
-                            </Row>
-                        </Nav>
-                </div>
-            
-               
-                
-            
-
+        </Navbar> 
+      
       </div>
     );
   }
