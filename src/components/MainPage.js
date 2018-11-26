@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import config from '../config';
-
 
 class MainPage extends Component{
 
@@ -12,7 +10,7 @@ class MainPage extends Component{
 
     componentDidMount(){
         axios
-        .get(config.rootPath + '/api/sisters')
+        .get('http://localhost:1998/api/sisters')
         .then(data => {
             console.log(data.data);
             this.setState({ sisters: data.data.sisters});
@@ -23,7 +21,7 @@ class MainPage extends Component{
     render() {
         return(
             <div>
-                {this.state.sisters.length > 0 ? this.state.sisters[0].avatar : '' }
+                {this.state.sisters.length > 0 ? this.state.sisters[1].avatar : '' }
             </div>
         )
     }

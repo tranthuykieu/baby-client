@@ -23,6 +23,7 @@ class RegisterSister extends Component {
             sex: '',
             age: '',
             email: '',
+            avatar: '',
             note: ''
         }
     }
@@ -30,24 +31,24 @@ class RegisterSister extends Component {
     _handleChange = (e) => {
         var preSister = this.state.sister;
         console.log('id: ' + e.target.id);
-        if (e.target.id === 0) preSister.phoneNumber = e.target.value;
-        if (e.target.id === 1) preSister.password = e.target.value;
-        if (e.target.id === 2) preSister.fullname = e.target.value;
-        if (e.target.id === 3) preSister.address = e.target.value;
-        if (e.target.id === 4) preSister.district = e.target.value;
-        if (e.target.id === 5) preSister.city = e.target.value;
-        if (e.target.id === 6) preSister.sex = e.target.value;
-        if (e.target.id === 7) preSister.age = e.target.value;
-        if (e.target.id === 8) preSister.email = e.target.value;
-        if (e.target.id === 9) preSister.avatar = e.target.value;
-        if (e.target.id === 10) preSister.note = e.target.value;
+        if (e.target.id == 0) preSister.phoneNumber = e.target.value;
+        if (e.target.id == 1) preSister.password = e.target.value;
+        if (e.target.id == 2) preSister.fullname = e.target.value;
+        if (e.target.id == 3) preSister.address = e.target.value;
+        if (e.target.id == 4) preSister.district = e.target.value;
+        if (e.target.id == 5) preSister.city = e.target.value;
+        if (e.target.id == 6) preSister.sex = e.target.value;
+        if (e.target.id == 7) preSister.age = e.target.value;
+        if (e.target.id == 8) preSister.email = e.target.value;
+        if (e.target.id == 9) preSister.avatar = e.target.value;
+        if (e.target.id == 10) preSister.note = e.target.value;
         
         this.setState({ sister: preSister })
     }
 
     _handleFileUpload(e) {
         // add code to upload file from PC
-        console.log(e.target.files[0]);
+        
     }
 
     _handleRegister = (e) => {
@@ -58,7 +59,7 @@ class RegisterSister extends Component {
                 console.log(res);
                 this.props.history.push('/mainpage');
             })
-            .catch(err => console.log(err));
+            .catch(err => console.error(err));
     }
 
 
@@ -83,7 +84,7 @@ class RegisterSister extends Component {
                         </Nav>
                         <Nav>
                             <Label>City: </Label>
-                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
+                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
                         </Nav>
                         <Nav>
                             <Label>District: </Label>
@@ -91,7 +92,7 @@ class RegisterSister extends Component {
                         </Nav>
                         <Nav>
                             <Label> Address: </Label>
-                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
+                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
                         </Nav>    
                         <Nav>
                             <Label>Sex: </Label>
@@ -119,7 +120,7 @@ class RegisterSister extends Component {
                         
                         <Nav>
                             <Label>Note: </Label>
-                            <Input onChange={this._handleChange} type='text' id='10' maxLenght='200'></Input>
+                            <Input onChange={this._handleChange} type='text' id='10'></Input>
                         </Nav>
                         
                     </Form>
