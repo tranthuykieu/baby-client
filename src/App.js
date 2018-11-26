@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-
 import HomePage from "./components/HomePage";
 import MainPage from "./components/MainPage";
 
@@ -31,7 +30,7 @@ class App extends Component {
         <Route path="/sister/register" component={RegisterSister} />
 
         <Route path="/mainpage" component={MainPage} />
-        
+
       </Switch>
     );
   }

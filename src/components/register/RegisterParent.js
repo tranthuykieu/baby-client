@@ -7,7 +7,7 @@ import axios from 'axios';
 class RegisterParent extends Component {
 
     componentDidMount() {
-
+    
     }
 
     state = {
@@ -31,25 +31,26 @@ class RegisterParent extends Component {
     _handleChange = (e) => {
         var preParent = this.state.parent;
         console.log('id: ' + e.target.id);
-        if (e.target.id == 0) preParent.phoneNumber = e.target.value;
-        if (e.target.id == 1) preParent.password = e.target.value;
-        if (e.target.id == 2) preParent.fullname = e.target.value;
-        if (e.target.id == 3) preParent.city = e.target.value;
-        if (e.target.id == 4) preParent.district = e.target.value;
-        if (e.target.id == 5) preParent.address = e.target.value;
-        if (e.target.id == 6) preParent.sex = e.target.value;
-        if (e.target.id == 7) preParent.yearOfBirth = e.target.value;
-        if (e.target.id == 8) preParent.email = e.target.value;
-        if (e.target.id == 9) preParent.avatar = e.target.value;
-        if (e.target.id == 10) preParent.babyAge = e.target.value;
-        if (e.target.id == 11) preParent.babyGender = e.target.value;
-        if (e.target.id == 12) preParent.note = e.target.value;
+        if (e.target.id === 0) preParent.phoneNumber = e.target.value;
+        if (e.target.id === 1) preParent.password = e.target.value;
+        if (e.target.id === 2) preParent.fullname = e.target.value;
+        if (e.target.id === 3) preParent.city = e.target.value;
+        if (e.target.id === 4) preParent.district = e.target.value;
+        if (e.target.id === 5) preParent.address = e.target.value;
+        if (e.target.id === 6) preParent.sex = e.target.value;
+        if (e.target.id === 7) preParent.yearOfBirth = e.target.value;
+        if (e.target.id === 8) preParent.email = e.target.value;
+        if (e.target.id === 9) preParent.avatar = e.target.value;
+        if (e.target.id === 10) preParent.babyAge = e.target.value;
+        if (e.target.id === 11) preParent.babyGender = e.target.value;
+        if (e.target.id === 12) preParent.note = e.target.value;
 
         this.setState({ parent: preParent });
     }
 
-    _handleFileUpload({}) {
+    _handleFileUpload = (e) => {
         //to upload picture
+    
     }
 
     _handleRegister = (e) => {
