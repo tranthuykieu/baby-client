@@ -48,9 +48,13 @@ class RegisterParent extends Component {
         this.setState({ parent: preParent });
     }
 
-    _handleFileUpload = (e) => {
+    _handleFileUpload = ({file}) => {
         //to upload picture
-    
+        const file = files[0];
+        this.props.actions.uploadRequest({
+            file,
+            name: "Sister avatar"
+        })
     }
 
     _handleRegister = (e) => {
@@ -115,7 +119,7 @@ class RegisterParent extends Component {
                         <Nav>
                             <Label>Avatar:</Label>
                             {/* <Input onChange={this._handleFileUpload} type='file' id='9'></Input> */}
-                            <Input onChange={this._handleChange} type='text' id='9'></Input>
+                            <Input onChange={this._handleFileUpload} type='file' id='9'></Input>
                         </Nav>
 
                         <h2>Baby's info:</h2>

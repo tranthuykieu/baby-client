@@ -132,4 +132,4 @@ class RegisterSister extends Component {
     }
 }
 
-export default RegisterSister;
+export default RegisterSister
