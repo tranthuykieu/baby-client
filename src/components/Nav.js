@@ -55,13 +55,13 @@ export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNav = this.toggleNav.bind(this);
+    this.toggle = this.toggle.bind(this);
 
     this.state = {
       isOpen: false
     };
   }
-  toggleNav() {
+  toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -72,7 +72,7 @@ export default class Example extends React.Component {
         <Navbar style={height} color="light" light expand="md">
           
           <NavbarBrand href="/">BabioService</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNav} />
+          <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
