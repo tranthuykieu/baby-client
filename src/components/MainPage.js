@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NavMainPage from '../components/NavMainPage';
 
 class MainPage extends Component{
 
@@ -11,7 +12,9 @@ componentDidMount(){
 
     render() {
         return(
-            "this is mainpage"
+            <div>
+                <NavMainPage />
+            </div>
         )
     }
 }
