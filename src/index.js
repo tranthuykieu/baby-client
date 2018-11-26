@@ -7,7 +7,6 @@ import App from './App';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { from } from 'rxjs';
 
 ReactDOM.render((
     <BrowserRouter>

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import Nav from "../Nav";
 
-import begin from "../img/begin.jpeg";
+import begin from "../../img/begin.jpeg";
 
 var background1 = {
   width: "100%",

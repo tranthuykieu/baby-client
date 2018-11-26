@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Nav from '../components/Nav';
 import '../CSS/style.css';
-import { Container, Row, Col,Jumbotron,Button,Card, CardImg, CardText, CardBody,
+import { Container, Row, Col,Jumbotron,Card, CardImg, CardText, CardBody,
     CardTitle,} from 'reactstrap';
 
 import landing2 from '../img/landing-2.jpg';
