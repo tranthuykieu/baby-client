@@ -105,26 +105,6 @@ class RegisterParent extends Component {
       .catch((err) => err);
   };
 
-  // _handleFileUpload = (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("myAvatar", this.state.avatar);
-  //   console.log(formData);
-  //   const config = {
-  //     headers: {
-  //       "content-type": "multipart/form-data"
-  //     }
-  //   };
-  //   axios
-  //     .post("http://localhost:1998/api/parents/upload", formData, config)
-  //     .then((response) => {
-  //       console.log("The file is successfully uploaded");
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error post response !");
-  //     });
-  // };
-
   _handleFileChangeUpload = (e) => {
     this.setState({ avatar: e.target.files[0] });
     var preParent = this.state.parent;
@@ -143,7 +123,7 @@ class RegisterParent extends Component {
               <Label>Phone Number: </Label>
               <Input
                 onChange={this._handleChange}
-                type="text"
+                type="number"
                 id="0"
                 required
               />
