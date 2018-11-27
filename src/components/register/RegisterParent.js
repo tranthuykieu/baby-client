@@ -6,9 +6,21 @@ import {
   CardTitle,
   Input,
   Nav,
-  Button
+  Button,
+  Container
 } from "reactstrap";
 import axios from "axios";
+
+var text_center = {
+  textAlign: "center"
+};
+
+var form_style = {
+  width: "700px",
+  margin: "auto",
+  background: "#eeeeee",
+  padding: "20px"
+};
 
 class RegisterParent extends Component {
   componentDidMount() {}
@@ -63,17 +75,6 @@ class RegisterParent extends Component {
 
   _handleRegister = (e) => {
     console.log(this.state.parent);
-
-    axios
-      .post("http://localhost:1998/api/parents", this.state.parent)
-      .then((res) => {
-        console.log(res);
-        this.props.history.push("/mainpage");
-      })
-      .catch((err) => err);
-  };
-
-  _handleFileUpload = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("myAvatar", this.state.avatar);
@@ -83,6 +84,8 @@ class RegisterParent extends Component {
         "content-type": "multipart/form-data"
       }
     };
+
+    //  Upload image
     axios
       .post("http://localhost:1998/api/parents/upload", formData, config)
       .then((response) => {
@@ -91,7 +94,36 @@ class RegisterParent extends Component {
       .catch((error) => {
         console.log("Error post response !");
       });
+
+    // Register
+    axios
+      .post("http://localhost:1998/api/parents", this.state.parent)
+      .then((res) => {
+        console.log(res);
+        this.props.history.push("/mainpage");
+      })
+      .catch((err) => err);
   };
+
+  // _handleFileUpload = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("myAvatar", this.state.avatar);
+  //   console.log(formData);
+  //   const config = {
+  //     headers: {
+  //       "content-type": "multipart/form-data"
+  //     }
+  //   };
+  //   axios
+  //     .post("http://localhost:1998/api/parents/upload", formData, config)
+  //     .then((response) => {
+  //       console.log("The file is successfully uploaded");
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error post response !");
+  //     });
+  // };
 
   _handleFileChangeUpload = (e) => {
     this.setState({ avatar: e.target.files[0] });
@@ -104,10 +136,10 @@ class RegisterParent extends Component {
   render() {
     return (
       <div className="container">
-        <FormGroup>
-          <CardTitle>PARENT REGISTER </CardTitle>
-          <Form>
-            <Nav>
+        <Container>
+          <CardTitle style={text_center}>PARENT REGISTER </CardTitle>
+          <Form style={form_style}>
+            <FormGroup>
               <Label>Phone Number: </Label>
               <Input
                 onChange={this._handleChange}
@@ -115,8 +147,8 @@ class RegisterParent extends Component {
                 id="0"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label> Password: </Label>
               <Input
                 onChange={this._handleChange}
@@ -124,8 +156,8 @@ class RegisterParent extends Component {
                 id="1"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label> Fullname: </Label>
               <Input
                 onChange={this._handleChange}
@@ -133,8 +165,8 @@ class RegisterParent extends Component {
                 id="2"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label> City: </Label>
               <Input
                 onChange={this._handleChange}
@@ -142,8 +174,8 @@ class RegisterParent extends Component {
                 id="3"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label>District: </Label>
               <Input
                 onChange={this._handleChange}
@@ -151,8 +183,8 @@ class RegisterParent extends Component {
                 id="4"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label> Address: </Label>
               <Input
                 onChange={this._handleChange}
@@ -160,8 +192,8 @@ class RegisterParent extends Component {
                 id="5"
                 required
               />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label>Sex: </Label>
               <Input
                 onChange={this._handleChange}
@@ -174,29 +206,29 @@ class RegisterParent extends Component {
                 <option>Female</option>
                 <option>LGBT</option>
               </Input>
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label> Year of birth: </Label>
               <Input onChange={this._handleChange} type="number" id="7" />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label>Email: </Label>
               <Input onChange={this._handleChange} type="text" id="8" />
-            </Nav>
+            </FormGroup>
             <h2>Baby's info:</h2>
-            <Nav>
+            <FormGroup>
               <Label>Baby's age: </Label>
               <Input onChange={this._handleChange} type="number" id="10" />
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label>Baby's gender: </Label>
               <Input onChange={this._handleChange} type="select" id="11">
                 <option />
                 <option>Male</option>
                 <option>Female</option>
               </Input>
-            </Nav>
-            <Nav>
+            </FormGroup>
+            <FormGroup>
               <Label>Note: </Label>
               <Input
                 onChange={this._handleChange}
@@ -204,18 +236,16 @@ class RegisterParent extends Component {
                 maxLength="300"
                 id="12"
               />
-            </Nav>
+            </FormGroup>
+            <FormGroup>
+              <input type="file" onChange={this._handleFileChangeUpload} />
+            </FormGroup>
+            <Button onClick={this._handleRegister} type="submit" className="">
+              {" "}
+              Register{" "}
+            </Button>
           </Form>
-
-          <Button onClick={this._handleRegister} type="submit" className="">
-            {" "}
-            Register{" "}
-          </Button>
-        </FormGroup>
-        <form onSubmit={this._handleFileUpload}>
-          <input type="file" onChange={this._handleFileChangeUpload} />
-          <button type="submit">Upload</button>
-        </form>
+        </Container>
       </div>
     );
   }

@@ -12,6 +12,8 @@ import Register from "./components/register/Register";
 import RegisterParent from "./components/register/RegisterParent";
 import RegisterSister from "./components/register/RegisterSister";
 
+import Profile from "./components/Profile";
+
 
 import "./App.css";
 
@@ -20,6 +22,8 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={HomePage} />
+
+        <Route path="/profile" component={Profile} />
 
         <Route path="/login" component={Login} />
         <Route path="/parent/login" component={LoginParent} />

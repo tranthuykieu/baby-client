@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import NavMainPage from "../components/NavMainPage";
 
 class MainPage extends Component {
   state = {
@@ -19,7 +20,10 @@ class MainPage extends Component {
   render() {
     return (
       <div>
-        {this.state.parents.length > 0 ? this.state.parents[0].fullname : ""}
+        <NavMainPage />
+        <div>
+          {this.state.parents.length > 0 ? this.state.parents[0].fullname : ""}
+        </div>
       </div>
     );
   }

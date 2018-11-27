@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { FormGroup, Form, Label, CardTitle, 
-    Input, Nav, Button } from 'reactstrap';
+    Input, Nav, Button, Col, Row,Container } from 'reactstrap';
 import axios from 'axios';
 
 
+var text_center = {
+    textAlign: "center"
+}
+
+var form_style = {
+    width: "700px",
+    margin: "auto",
+    background: "#eeeeee",
+    padding: "20px"
+}
 
 
 class RegisterSister extends Component {
@@ -66,70 +76,91 @@ class RegisterSister extends Component {
     render() {
         return(
             <div className='container'>
-                <FormGroup>
-                    <CardTitle> BABYSISTER REGISTER </CardTitle>
-                    <Form >
+                <Container>
+                <CardTitle style={text_center}> BABYSISTER REGISTER </CardTitle>
 
-                        <Nav>
-                            <Label>Phone Number: </Label>
-                            <Input onChange={this._handleChange} type='text' id='0' required></Input>
-                        </Nav>
-                        <Nav>
-                            <Label> Password: </Label>
-                            <Input onChange={this._handleChange} type='password' id='1' required></Input>
-                        </Nav>
-                        <Nav>
-                            <Label>Fullname: </Label>
-                            <Input onChange={this._handleChange} type='text' id='2' required></Input>
-                        </Nav>
-                        <Nav>
+                <Form  style={form_style}>
+                    <FormGroup>
+                        <Label>Fullname: </Label>
+                        <Input onChange={this._handleChange} type='text' id='2' required></Input>
+                    </FormGroup>
+
+                    <Row form>
+                        <Col>
+                            <FormGroup>
+                                <Label>Phone Number: </Label>
+                                <Input onChange={this._handleChange} type='text' id='0' required></Input>
+                            </FormGroup>
+                        </Col>
+
+                        <Col>
+                            <FormGroup>
+                                <Label> Password: </Label>
+                                <Input onChange={this._handleChange} type='password' id='1' required></Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
+
+                    <Row form>
+                        <Col>
+                            <FormGroup>
+                                <Label>Sex: </Label>
+                                <Input onChange={this._handleChange} type='select' id='6' required>
+                                    <option></option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>LGBT</option>
+                                </Input>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup>
+                                <Label>Age: </Label>
+                                <Input onChange={this._handleChange} type='number' id='7' required></Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                        
+                        
+                        
+                        <FormGroup>
                             <Label>City: </Label>
-                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
-                        </Nav>
-                        <Nav>
+                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
+                            </FormGroup>
+                        <FormGroup>
                             <Label>District: </Label>
                             <Input onChange={this._handleChange} type='text' id='4' required></Input>
-                        </Nav>
-                        <Nav>
+                            </FormGroup>
+                        <FormGroup>
                             <Label> Address: </Label>
-                            <Input onChange={this._handleChange} type='text' id='5' required></Input>
-                        </Nav>    
-                        <Nav>
-                            <Label>Sex: </Label>
-                            <Input onChange={this._handleChange} type='select' id='6' required>
-                                <option></option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>LGBT</option>
-                            </Input>
-                        </Nav>
-                        <Nav>
-                            <Label>Age: </Label>
-                            <Input onChange={this._handleChange} type='number' id='7' required></Input>
-                        </Nav>
-                        <Nav>
+                            <Input onChange={this._handleChange} type='text' id='3' required></Input>
+                        </FormGroup>   
+                        
+                        
+                        <FormGroup>
                             <Label>Email: </Label>
                             <Input onChange={this._handleChange} type='text' id='8'></Input>
-                        </Nav>
+                        </FormGroup>
 
-                        <Nav>
+                        <FormGroup>
                             <Label>Avatar: </Label>
                             {/* <Input onChange={this._handleFileUpload} type='file' id='9'></Input> */}
                             <Input onChange={this._handleChange} type='text' id='9'></Input> 
-                        </Nav>
+                        </FormGroup>
                         
-                        <Nav>
+                        <FormGroup>
                             <Label>Note: </Label>
-                            <Input onChange={this._handleChange} type='text' id='10'></Input>
-                        </Nav>
+                            <Input onChange={this._handleChange} type='textarea' id='10' maxLenght='200'></Input>
+                        </FormGroup>
                         
-                    </Form>
+                    
 
                     <Button type='submit' onClick={this._handleRegister} className='' > Register </Button>
-                </FormGroup>
+                    </Form> 
+                    </Container>
             </div>
         )
     }
 }
 
-export default RegisterSister;
+export default RegisterSister
