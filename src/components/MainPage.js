@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import NavMainPage from '../components/NavMainPage';
 
 class MainPage extends Component{
 
@@ -21,7 +21,7 @@ class MainPage extends Component{
     render() {
         return(
             <div>
-                {this.state.sisters.length > 0 ? this.state.sisters[1].avatar : '' }
+                <NavMainPage />
             </div>
         )
     }
