@@ -24,14 +24,6 @@ var form_style = {
 
 class RegisterParent extends Component {
   componentDidMount() {}
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     avatar: null
-  //   };
-  //   this._handleFileUpload = this._handleFileUpload.bind(this);
-  //   this._handleFileChangeUpload = this._handleFileChangeUpload.bind(this);
-  // }
 
   state = {
     parent: {
@@ -218,7 +210,8 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <input type="file" onChange={this._handleFileChangeUpload} />
+              <Label>Avatar: </Label>
+              <Input type="file" onChange={this._handleFileChangeUpload} />
             </FormGroup>
             <Button onClick={this._handleRegister} type="submit" className="">
               {" "}
