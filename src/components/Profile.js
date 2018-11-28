@@ -50,7 +50,7 @@ class Profile extends Component {
                     <h3>Overview </h3>
                     <p>My experience is 15 yrs as a nanny/ house manager where I took care of calling maintenance, laundry, errand, cooking, etc. After having my own children I started my own cleaning business for more flexibility. I am open to price per a job depending how many bedrooms and baths in the home or a rate of $50-$75$/week. I bring my own supplies except vacuum( unless previously requested). And I try to stay as natural as possible. I am flexible if you need extra done. I would first come meet you and evaluate how long it takes so you are not over charged and we are a good fit Reference and background check available upon request. </p>
                     <h3>Availability </h3>
-                    <p> 20-40hr/hr </p>
+                    <p> 20-40hr/week </p>
 
                 </Container>
             </div>
