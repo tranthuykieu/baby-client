@@ -14,7 +14,6 @@ import RegisterSister from "./components/register/RegisterSister";
 
 import Profile from "./components/Profile";
 
-
 import "./App.css";
 
 class App extends Component {
@@ -23,7 +22,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={HomePage} />
 
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile/:sisterID" component={Profile} />
 
         <Route path="/login" component={Login} />
         <Route path="/parent/login" component={LoginParent} />
@@ -34,7 +33,6 @@ class App extends Component {
         <Route path="/sister/register" component={RegisterSister} />
 
         <Route path="/mainpage" component={MainPage} />
-
       </Switch>
     );
   }

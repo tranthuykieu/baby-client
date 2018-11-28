@@ -1,61 +1,94 @@
-import React, { Component } from 'react';
-import { Container,Row,Col,Button } from 'reactstrap';
-import user_icon from '../img/user.png';
+import React, { Component } from "react";
+import { Container, Row, Col, Button } from "reactstrap";
+import axios from "axios";
 
 var background = {
-    background: "#f9f4f6",
-    padding: "30px"
-}
+  background: "#f9f4f6",
+  padding: "30px"
+};
 
 var logo_icon = {
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto"
-}
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto"
+};
 
 var user_name = {
-    fontSize: "1.5rem"
-}
+  fontSize: "1.5rem"
+};
 
 var floatright = {
-    float: "right"
-  }
+  float: "right"
+};
 
 class Profile extends Component {
-    render(){
-        return(
-            <div>
-                <Container style={background}>
-                    <Row>
-                        <Col>
-                            <img style={logo_icon} src={user_icon} alt="user_icon" classNam='img' />
-                        </Col>
-                        <Col>
-                            <h1 style={user_name}> Vu Hoang Minh</h1>
-                            <p>Hanoi, Viet Nam</p>
-                            <p>Tel: 0964823741 </p>
-                            <p> Email: ginjewel103@gmail.com </p>
-                        </Col>
-                        <Col>
-                            <p>Experience 15 years</p> 
-                            <p>Billing Rate $50-$75/week </p>
-                        </Col>
-                        <Col >
-                            <Button style={floatright} outline button="sencondary"> Edit </Button>
-                        </Col>
-                    </Row>
-                </Container>
-                
-                <Container>
-                    <h3>Overview </h3>
-                    <p>My experience is 15 yrs as a nanny/ house manager where I took care of calling maintenance, laundry, errand, cooking, etc. After having my own children I started my own cleaning business for more flexibility. I am open to price per a job depending how many bedrooms and baths in the home or a rate of $50-$75$/week. I bring my own supplies except vacuum( unless previously requested). And I try to stay as natural as possible. I am flexible if you need extra done. I would first come meet you and evaluate how long it takes so you are not over charged and we are a good fit Reference and background check available upon request. </p>
-                    <h3>Availability </h3>
-                    <p> 20-40hr/week </p>
+  state = {
+    sister: {}
+  };
 
-                </Container>
-            </div>
-        );
-    }
+  componentDidMount() {
+    axios
+      .get(
+        "http://localhost:1998/api/sisters/" + this.props.match.params.sisterID
+      )
+      .then((data) => {
+        console.log(data.data.sisterFound);
+        this.setState({ sister: data.data.sisterFound });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  render() {
+    console.log(this.props.match.params.sisterID);
+    const sister = this.state.sister;
+    return (
+      <div>
+        <Container style={background}>
+          <Row>
+            <Col>
+              <img
+                style={logo_icon}
+                src={"http://" + sister.hashAvatar}
+                alt={sister.firstname}
+                className="img-thumbnail"
+              />
+            </Col>
+            <Col>
+              <h1 style={user_name}>
+                {sister.firstname} {sister.lastname}
+              </h1>
+              <p>
+                {sister.city}, {sister.district}, {sister.address}
+              </p>
+              <p>Tel: {sister.phoneNumber} </p>
+              <p> Email: {sister.email} </p>
+            </Col>
+            <Col>
+              <h3>Experience</h3>
+              <p>{sister.experience}</p>
+              <h3>Billing Rate</h3>
+              <p>{sister.billingRate}</p>
+            </Col>
+            <Col>
+              <h3>Availability </h3>
+              <p> {sister.availability} </p>
+            </Col>
+            <Col>
+              <Button style={floatright} outline button="sencondary">
+                {" "}
+                Edit{" "}
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container>
+          <h3>Overview </h3>
+          <p>{sister.note}</p>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default Profile;
