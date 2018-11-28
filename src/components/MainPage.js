@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NavMainPage from "../components/NavMainPage";
+import AvailableSister from './AvailableSister';
 
 class MainPage extends Component {
 
@@ -21,6 +22,7 @@ class MainPage extends Component {
         <NavMainPage/>
         <div>
           {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""}
+
         </div>
       </div>
     );

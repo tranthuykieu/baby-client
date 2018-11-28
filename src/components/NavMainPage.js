@@ -29,7 +29,8 @@ var logo_icon = {
   
   var main_nav = {
     height: "9vh",
-    padding: "10px"
+    padding: "10px",
+    background: "#e2e2e2"
   }
 
 
