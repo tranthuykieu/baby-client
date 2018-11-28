@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from '../img/logo.png';
 import {Navbar,Nav,NavItem,NavbarBrand,NavLink,NavbarToggler,Collapse,Row, Col,Button } from 'reactstrap';
 
@@ -50,6 +51,14 @@ class NavMainPage extends Component {
         });
       }
 
+      _onLogout = (e) => {
+        axios.get('http://localhost:1998/api/parent/logout')
+        .then((res) => {
+          this.props.history.push('/');
+        })
+        
+      }
+
     render(){
         return (
         <div>
@@ -63,7 +72,7 @@ class NavMainPage extends Component {
                                     <img style={logo_icon} src={logo} alt="logo" />
                                 </Col>
                                 <Col style={inline}>
-                                    <Button style={floatright} color="danger"> Log out</Button>
+                                    <Button onChange={this._onLogout} style={floatright} color="danger"> Log out</Button>
                                     <NavItem>
                                         <NavLink style={floatright} href="/">Welcome, username</NavLink>
                                         

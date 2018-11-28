@@ -4,16 +4,14 @@ import NavMainPage from "../components/NavMainPage";
 import AvailableSister from './AvailableSister';
 
 class MainPage extends Component {
-  state = {
-    parents: []
-  };
+
 
   componentDidMount() {
     axios
-      .get("http://localhost:1998/api/parents")
+      .get("http://localhost:1998/api/sisters")
       .then((data) => {
         console.log(data.data);
-        this.setState({ parents: data.data.parents });
+        // this.setState({ sisters: data.data.sisters });
       })
       .catch((err) => console.error(err));
   }
@@ -21,14 +19,10 @@ class MainPage extends Component {
   render() {
     return (
       <div>
-        <NavMainPage />
+        <NavMainPage/>
         <div>
-          {this.state.parents.length > 0 ? this.state.parents[0].fullname : ""}
-        
-        </div>
+          {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""}
 
-        <div>
-            <AvailableSister />
         </div>
       </div>
     );

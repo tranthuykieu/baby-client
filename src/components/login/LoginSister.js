@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import {
   FormGroup,
   Form,
@@ -8,6 +9,8 @@ import {
   Nav,
   Button
 } from "reactstrap";
+
+
 import Example from "../Nav";
 import begin from "../../img/begin.jpeg";
 
@@ -31,9 +34,30 @@ class LoginSister extends Component {
     parent: {}
   };
 
-  _handleChange = (e) => {};
+  _onChangePhoneNumber = (e) => {
+    this.setState({ phoneNumber: e.target.value })
+    console.log(this.state);
+    // this.props.setSiginValue(e.target.value);
+  }
 
-  _handleLogin = (e) => {};
+  _oncChangePassword = (e) => {
+    this.setState({ password: e.target.value })
+    console.log(this.state);
+  }
+
+  _onSubmit = (e) => { 
+    e.preventDefault();
+    axios.post('http://localhost:1998/api/sister/login', this.state )
+    .then(res => {
+      console.log('Login successful');
+      console.log(res);
+      this.props.history.push('/mainpage');
+      alert('Welcome to BabioService !');
+    })
+    .catch(err => {
+      alert('Login fail !');
+    });
+  }
 
   render() {
     return (
@@ -47,7 +71,7 @@ class LoginSister extends Component {
                 <Nav>
                   <Label> Phone number: </Label>
                   <Input
-                    onChange={this._handleChange}
+                    onChange={this._onChangePhoneNumber}
                     type="number"
                     if=""
                     required
@@ -56,12 +80,12 @@ class LoginSister extends Component {
                 <Nav>
                   <Label> Password: </Label>
                   <Input
-                    onChange={this.handleChange}
+                    onChange={this._oncChangePassword}
                     type="password"
                     required
                   />
                 </Nav>
-                <Button style={button} color="danger">
+                <Button onChange={this._onSubmit} style={button} color="danger">
                   {" "}
                   Login{" "}
                 </Button>
