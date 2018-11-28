@@ -133,3 +133,19 @@
     background-color: whitesmoke;
     text-align: center
 }
+
+.register-container {
+    display: flex;
+    justify-content: center;
+}
+
+.register {
+    width: 490px;
+    height: auto;
+    border-radius: 25px;
+    border: 2px solid brown;
+    padding: 16px;
+    margin: 16px;
+    background-color: whitesmoke;
+    text-align: center;
+}
