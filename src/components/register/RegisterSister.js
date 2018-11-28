@@ -37,7 +37,8 @@ class RegisterSister extends Component {
     sister: {
       phoneNumber: "",
       password: "",
-      fullname: "",
+      firstname: "",
+      lastname: "",
       city: "",
       district: "",
       address: "",
@@ -248,12 +249,59 @@ class RegisterSister extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label>Note: </Label>
+              <Label>Experience: </Label>
               <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="10"
+                required
+              >
+                <option />
+                <option>&lt; 6 months</option>
+                <option>6 months - 1 year</option>
+                <option>1 - 3 years</option>
+                <option>&gt; 3 years</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Billingrate: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="11"
+              >
+                <option />
+                <option>5 - 7 $/hour</option>
+                <option>7 - 9 $/hour</option>
+                <option>9 - 11 $/hour</option>
+                <option>11 - 13 $/hour</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Availability: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="11"
+              >
+                <option />
+                <option>Right now</option>
+                <option>Within a week</option>
+                <option>Within a month</option>
+                <option>More</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Overview: </Label>
+              <Input
+                placeholder="Introduce about yourself..."
                 style={{ width: "300px", height: "150px" }}
                 onChange={this._handleChange}
                 type="textarea"
-                id="10"
+                id="13"
                 maxLenght="200"
               />
             </FormGroup>
