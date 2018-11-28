@@ -21,7 +21,7 @@ class MainPage extends Component {
       <div>
         <NavMainPage/>
         <div>
-          {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""}
+          {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
 
         </div>
       </div>

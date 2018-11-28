@@ -39,7 +39,8 @@ class RegisterParent extends Component {
     parent: {
       phoneNumber: "",
       password: "",
-      fullname: "",
+      firstname: "",
+      lastname: "",
       city: "",
       district: "",
       address: "",
@@ -145,12 +146,8 @@ class RegisterParent extends Component {
       yearBabyOptions.push(<option value={year}>{year}</option>);
     }
 
-    const object = this.state.parent;
-    const isEnable =
-      object.email.length > 0 &&
-      object.fullname.length > 0 &&
-      object.password.length > 0 &&
-      object.phoneNumber.length > 0;
+    
+    
     return (
       <div style={background1}>
         <Example />
@@ -313,7 +310,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <Button
-              disabled={!isEnable}
+              
               style={button}
               type="submit"
               onClick={this._handleRegister}

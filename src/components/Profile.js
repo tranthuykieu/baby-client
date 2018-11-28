@@ -28,7 +28,7 @@ class Profile extends Component {
                 <Container style={background}>
                     <Row>
                         <Col>
-                            <img style={logo_icon} src={user_icon} alt="user_icon" />
+                            <img style={logo_icon} src={user_icon} alt="user_icon" classNam='img' />
                         </Col>
                         <Col>
                             <h1 style={user_name}> Vu Hoang Minh</h1>
