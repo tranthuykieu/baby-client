@@ -25,7 +25,7 @@ class MainPage extends Component {
         // sister={sister}
         hashAvatar={sister.hashAvatar}
         firstname={sister.firstname}
-        fullname={sister.fullname}
+        lastname={sister.lastname}
         city={sister.city}
         billingRate={sister.billingRate}
         experience={sister.experience}
@@ -36,7 +36,7 @@ class MainPage extends Component {
     return (
       <div>
         <NavMainPage />
-        <div>
+        <div className=''>
           {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
           {allSisters}
         </div>
