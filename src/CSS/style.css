@@ -149,3 +149,39 @@
     background-color: whitesmoke;
     text-align: center;
 }
+
+/* CSS Mainpage-AvailableSister */
+.text {
+    position: relative;
+    font-size: 14px;
+    color: black;
+    width: 400px; /* Could be anything you like. */
+  }
+  
+  .text-concat {
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em; /* (Number of lines you want visible) * (line-height) */
+    line-height: 1.2em;
+    text-align:justify;
+  }
+  
+  .text.ellipsis::after {
+    content: "...";
+    position: absolute;
+    right: -12px; 
+    bottom: 4px;
+  }
+
+
+  .img {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
