@@ -1,70 +1,52 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
-// import user from "../img/user.png";
-
-var container = {
-  border: "0.4px black solid",
-  display: "block",
-  width: "50%",
-  height: "180px",
-  marginTop: "30px"
-};
-
-var div_image = {
-  display: "inline-block",
-  verticalAlign: "top",
-  width: "100px",
-  minHeight: "100px",
-  maxHeight: "auto",
-  margin: "5px",
-  padding: "5px",
-  float: "left"
-};
-
-var image = {
-  width: "150px",
-  height: "150px",
-  borderRadius: "50%",
-  borderCollapse: "collapsed"
-};
-
-var div_info = {
-  display: "inline-block"
-};
+import { Container, Row, Col } from "reactstrap";
 
 class AvailableSister extends Component {
   render() {
     console.log(this.props.hashAvatar);
     return (
-      <div>
-        <Container style={container}>
-          <div style={div_image}>
-            <img
-              style={image}
+      <div className='sister-show container ml-5%'>
+        
+        <Row className='shadow'>
+          <Col>
+          <div className='sister-image-container'>
+            <img className='sister-image'
+              
               src={"http://" + this.props.hashAvatar}
               alt={this.props.firstname}
             />
           </div>
+          </Col>
+        
+          <Col className='sister-info-container m-auto'>
+              <Col className="sister-info">
+                  <h5>
+                    {"Name: "} {" "} {this.props.firstname} {" "} {this.props.lastname}
+                  </h5>
+              </Col>
 
-          <div style={div_info} className="text ellipsis">
-            <div>
-              {" "}
-              <h3>
-                {" "}
-                {this.props.firstname} | {this.props.city}
-              </h3>{" "}
-            </div>
-            <div>
-              {" "}
-              {this.props.billingRate} | {"Experience: "}{" "}
-              {this.props.experience}
-            </div>
-            <div> Availability: {this.props.availability}</div>
-            <div className="text-concat">
-              <p> {this.props.note} </p>
-            </div>
-          </div>
-        </Container>
+              <Col className="sister-info">
+                  {this.props.city}
+              </Col>
+
+              <Col className="sister-info">
+                  Experience: {this.props.experience}
+              </Col>
+
+              <Col className="sister-info">
+                  Availability: {this.props.availability}
+              </Col>
+
+              <Col className="sister-info">
+                  Billing Rate: {this.props.billingRate}
+              </Col>
+          
+          </Col>
+          
+        </Row>
+
+          
+        
       </div>
     );
   }

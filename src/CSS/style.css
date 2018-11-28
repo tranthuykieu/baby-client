@@ -142,6 +142,8 @@
     
 }
 
+/* login & register */
+
 .login {
     width: 400px;
     height: auto;
@@ -202,5 +204,44 @@
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;
-    border-radius: 5px
+    text-align: right;
 }
+
+.sister-show {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    background-color: rgb(206, 225, 236);
+    border: solid 2px rgb(72, 135, 194);
+    border-radius: 5px;
+    /* text-align: center; */
+    margin-top: 5%;
+}
+.sister-image-container {
+    padding-left: 5%;
+}
+
+.sister-image {
+    margin: 2%;
+    position: relative;
+    display: inline;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border: solid 2px rgb(110, 170, 226);
+}
+
+.sister-show :hover {
+    box-shadow: 2px;
+    cursor: pointer;
+}
+
+.sister-info {
+    text-align: right;
+}
+.sister-info-container {
+    margin-bottom: 5%
+}
+
+/* Search */

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import logo from '../img/logo.png';
-import {Navbar,Nav,NavItem,NavbarBrand,NavLink,NavbarToggler,Collapse,Row, Col,Button } from 'reactstrap';
+import {Navbar,Nav,NavItem,NavbarBrand,
+  NavLink,NavbarToggler,Collapse,Row, 
+  Col,Button, Input, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem
+} from 'reactstrap';
 
-
-var logo_icon = {
-    display: "block",
-    width: "80px",
-    height: "50px",
-    textAlign: "center",
-    marginLeft: "auto",
-    marginRight: "auto"
-  }
   
   var header = {
     textAlign: "center",
@@ -22,11 +16,7 @@ var logo_icon = {
     float: "right"
   }
   
-  var inline = {
-    display: "inline",
-    margin: "10px"
-  }
-  
+
   var main_nav = {
     height: "9vh",
     padding: "10px",
@@ -59,24 +49,32 @@ class NavMainPage extends Component {
         
       }
 
+
     render(){
         return (
-        <div>
+        <div className=''>
           <div style={main_nav}>
                         <Nav navbar>
                             <Row>
                                 <Col>
                                   <h1 style={header}> BabioService </h1>
                                 </Col>
+
                                 <Col>
-                                    <img style={logo_icon} src={logo} alt="logo" />
+                                    <Input type='text' placeholder='Search...'></Input>
                                 </Col>
-                                <Col style={inline}>
-                                    <Button onChange={this._onLogout} style={floatright} color="danger"> Log out</Button>
-                                    <NavItem>
-                                        <NavLink style={floatright} href="/">Welcome, username</NavLink>
-                                        
-                                    </NavItem>
+
+                                <Col>
+                                    <Col>
+                                      <Button onChange={this._onLogout} style={floatright} color="primary"> Log out</Button>
+                                    </Col>
+                                    
+                                    <Col >
+                                        <Button color='primary'> Name</Button>
+                                      
+                                    </Col>
+
+                                    
                                     
                                 </Col>
                             </Row>
