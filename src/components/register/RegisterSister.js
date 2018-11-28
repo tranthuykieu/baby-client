@@ -333,6 +333,7 @@ class RegisterSister extends Component {
             </FormGroup>
 
             <Button
+              color='primary'
               style={button}
               type="submit"
               onClick={this._handleRegister}

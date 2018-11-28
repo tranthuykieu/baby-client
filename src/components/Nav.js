@@ -10,6 +10,7 @@ import {
   Button
 } from "reactstrap";
 
+
 var height = {
   height: "12vh"
 };
@@ -32,7 +33,7 @@ export default class Example extends React.Component {
     return (
       <div className='container-navhome'>
         <Navbar  style={height} color="" light expand="md">
-          <NavbarBrand href="/" className='logo-home'> BabioService</NavbarBrand>
+          <NavbarBrand href="/" className='logo-home'> <h2>BabioService</h2> </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

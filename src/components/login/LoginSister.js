@@ -61,9 +61,9 @@ class LoginSister extends Component {
 
   render() {
     return (
-      <div>
+      <div style={background1}>
         <Example />
-        <div style={background1} className="login-container">
+        <div  className="login-container">
           <div className="login">
             <FormGroup>
               <CardTitle> BABYSITTER LOGIN </CardTitle>
@@ -85,7 +85,7 @@ class LoginSister extends Component {
                     required
                   />
                 </Nav>
-                <Button onChange={this._onSubmit} style={button} color="danger">
+                <Button onChange={this._onSubmit} style={button} color="primary">
                   {" "}
                   Login{" "}
                 </Button>

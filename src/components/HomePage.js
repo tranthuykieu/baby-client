@@ -49,7 +49,7 @@ class HomePage extends Component {
                     <p className="para-cap">Taking care of your children at anytime</p>
                     <p className="para-cap">Education to future-proof your children</p>
                     <a >
-                        <button className="btn-explore" type="button"><span>Explore now</span></button>
+                        {/* <button className="btn-explore" type="button"><span>Explore now</span></button> */}
                     </a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ class HomePage extends Component {
                                     <CardBody>
                                     <CardTitle>Newborns and infants</CardTitle>
                                     
-                                        <CardText>Babio Service is a leading authority on all things baby. With a cumulative 100+ years of infant experience, you can trust t hat your newborn or infant will be safe in our Infant Specialist's hands. Babio Service has experience with twins, preemies and multiples.
+                                        <CardText className='text-homepage'>Babio Service is a leading authority on all things baby. With a cumulative 100+ years of infant experience, you can trust t hat your newborn or infant will be safe in our Infant Specialist's hands. Babio Service has experience with twins, preemies and multiples.
                                         </CardText>
                                     </CardBody>
                                 </Card>
@@ -76,7 +76,7 @@ class HomePage extends Component {
                                     <CardBody>
                                     <CardTitle>Children of all age</CardTitle>
                                     
-                                        <CardText>We have babysitters and nannies with childcare experiences spanning a broad range; from experience only a mother possesses to versatile daycare experience. Babio Service are available 24 hours a day, 7 days a week, 365 days a year for registered families.
+                                        <CardText className='text-homepage'>We have babysitters and nannies with childcare experiences spanning a broad range; from experience only a mother possesses to versatile daycare experience. Babio Service are available 24 hours a day, 7 days a week, 365 days a year for registered families.
                                         </CardText>
                                     </CardBody>
                                 </Card>
@@ -87,7 +87,7 @@ class HomePage extends Component {
                                     <CardBody>
                                     <CardTitle>Special Needs</CardTitle>
                                     
-                                        <CardText>Whatever special needs your child may have, Babio Service has a proven track record of providing care at a variety of levels. We have experienced staff ready to give loving care to children with a broad range of special needs such as cerebral palsy, autism, ADD/ADHD, and more.
+                                        <CardText className='text-homepage'>Whatever special needs your child may have, Babio Service has a proven track record of providing care at a variety of levels. We have experienced staff ready to give loving care to children with a broad range of special needs such as cerebral palsy, autism, ADD/ADHD, and more.
                                         </CardText>
                                     </CardBody>
                                 </Card>
@@ -106,8 +106,8 @@ class HomePage extends Component {
                                 </div>
                             </Col>
                             <Col>
-                                <h1>An Established, Upscale Babysitting</h1>
-                                <p>Here at Babio Service, we understand your worries when it comes to leaving your precious child. That is why we make sure to only employ babysitters and nannies with CPR, First Aid and AED certifications for your peace of mind. We are available seven days a week, including all holidays and even if your child is sick. Trust that Babio Service will provide you with experienced babysitters and nannies who will give personalized one-on-one care to your children. We don't settle for anything less than exceeding your expectations.</p>
+                                <h5>An Established, Upscale Babysitting</h5>
+                                <p className='text-homepage'>Here at Babio Service, we understand your worries when it comes to leaving your precious child. That is why we make sure to only employ babysitters and nannies with CPR, First Aid and AED certifications for your peace of mind. We are available seven days a week, including all holidays and even if your child is sick. Trust that Babio Service will provide you with experienced babysitters and nannies who will give personalized one-on-one care to your children. We don't settle for anything less than exceeding your expectations.</p>
                             </Col>
                         </Row>
 
@@ -124,11 +124,11 @@ class HomePage extends Component {
 
                 <div >
                     <Container>
-                        <h1 className="title header">Paying Your Babysitter</h1>
+                        <h2 className="title header">Paying Your Babysitter</h2>
                         <Row>
                             <Col>
-                                <h1>Do not worry about checks or cash</h1>
-                                <p>We pay the sitters or nannies for you. Our parents are invoiced bi-weekly on the 1st and 15th of the month for all prior sitting and nanny charges and associated fees. The credit card on file will be billed the following day. There is no need to pay the sitters or nannies directly, unless you would like to give them a gratuity. Babio Service takes responsibility for all payroll, taxes and withholding so our parents don't have to worry about it.</p>
+                                <h5>Do not worry about checks or cash</h5>
+                                <p className='text-homepage'>We pay the sitters or nannies for you. Our parents are invoiced bi-weekly on the 1st and 15th of the month for all prior sitting and nanny charges and associated fees. The credit card on file will be billed the following day. There is no need to pay the sitters or nannies directly, unless you would like to give them a gratuity. Babio Service takes responsibility for all payroll, taxes and withholding so our parents don't have to worry about it.</p>
                             </Col>
                             <Col>
                                 <div className="img-container">
