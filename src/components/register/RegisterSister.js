@@ -129,7 +129,7 @@ class RegisterSister extends Component {
     const yearOptions = [];
     for (let i = minOffset; i <= maxOffset; i++) {
       const year = thisYear - i;
-      yearOptions.push(<option value={year}>{year}</option>);
+      yearOptions.push(<option>{year}</option>);
     }
 
     const object = this.state.sister;
@@ -145,7 +145,7 @@ class RegisterSister extends Component {
           <div className="register">
             <CardTitle> BABYSISTER REGISTER </CardTitle>
             <FormGroup className="form-inline">
-              <Label>Phone Number: </Label>
+              <Label> Phone Number: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -177,6 +177,7 @@ class RegisterSister extends Component {
             <FormGroup className="form-inline">
               <Label>Sex: </Label>
               <Input
+                style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="select"
                 id="6"
@@ -192,9 +193,11 @@ class RegisterSister extends Component {
               <Label>Year of Birth: </Label>
               <div onChange={this._handleChange} type="number" id="7" required>
                 <select
+                  style={{ width: "300px" }}
                   value={this.selectedYear}
                   onChange={this._handleYearChange}
                 >
+                  <option />
                   {yearOptions}
                 </select>
               </div>
