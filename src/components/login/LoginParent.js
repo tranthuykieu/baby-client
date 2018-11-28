@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import {
   FormGroup,
   Form,
@@ -8,8 +9,11 @@ import {
   Nav,
   Button
 } from "reactstrap";
+
 import Example from "../Nav";
 import begin from "../../img/begin.jpeg";
+// axios.defaults.withCredentials = true;
+
 
 var background1 = {
   width: "100%",
@@ -27,13 +31,30 @@ const button = {
 };
 
 class LoginParent extends Component {
-  state = {
-    parent: {}
-  };
 
-  _handleChange = (e) => {};
+  _onChangePhoneNumber = (e) => {
+    this.setState({ phoneNumber: e.target.value })
+    console.log(this.state);
+    // this.props.setSiginValue(e.target.value);
+  }
 
-  _handleLogin = (e) => {};
+  _oncChangePassword = (e) => {
+    this.setState({ password: e.target.value })
+    console.log(this.state);
+  }
+
+  _onSubmit = (e) => { 
+    e.preventDefault();
+    axios.post('http://localhost:1998/api/parent/login', this.state )
+    .then(res => {
+      console.log('Login successful');
+      console.log(res);
+      this.props.history.push('/mainpage');
+    })
+    .catch(err => {
+      alert('Login fail !');
+    });
+  }
 
   render() {
     return (
@@ -47,7 +68,7 @@ class LoginParent extends Component {
                 <Nav>
                   <Label> Phone number: </Label>
                   <Input
-                    onChange={this._handleChange}
+                    onChange={this._onChangePhoneNumber}
                     type="number"
                     if=""
                     required
@@ -56,14 +77,15 @@ class LoginParent extends Component {
                 <Nav>
                   <Label> Password: </Label>
                   <Input
-                    onChange={this.handleChange}
+                    onChange={this._oncChangePassword}
                     type="password"
                     required
                   />
                 </Nav>
-                <Button style={button} color="danger">
-                  {" "}
-                  Login{" "}
+
+                <Button onClick={this._onSubmit} style={button} color="danger" type='submit'>
+                  
+                  Login
                 </Button>
               </Form>
             </FormGroup>
