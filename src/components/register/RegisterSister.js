@@ -64,13 +64,14 @@ class RegisterSister extends Component {
     console.log("id: " + e.target.id);
     if (e.target.id == 0) preSister.phoneNumber = e.target.value;
     if (e.target.id == 1) preSister.password = e.target.value;
-    if (e.target.id == 2) preSister.fullname = e.target.value;
-    if (e.target.id == 3) preSister.address = e.target.value;
-    if (e.target.id == 4) preSister.district = e.target.value;
-    if (e.target.id == 5) preSister.city = e.target.value;
-    if (e.target.id == 6) preSister.sex = e.target.value;
-    if (e.target.id == 7) preSister.age = e.target.value;
-    if (e.target.id == 8) preSister.email = e.target.value;
+    if (e.target.id == 2) preSister.firstname = e.target.value;
+    if (e.target.id == 3) preSister.lastname = e.target.value;
+    if (e.target.id == 4) preSister.address = e.target.value;
+    if (e.target.id == 5) preSister.district = e.target.value;
+    if (e.target.id == 6) preSister.city = e.target.value;
+    if (e.target.id == 7) preSister.sex = e.target.value;
+    if (e.target.id == 8) preSister.age = e.target.value;
+    if (e.target.id == 9) preSister.email = e.target.value;
     // if (e.target.id == 9) preSister.avatar = e.target.value;
     if (e.target.id == 10) preSister.note = e.target.value;
 
@@ -129,15 +130,9 @@ class RegisterSister extends Component {
     const yearOptions = [];
     for (let i = minOffset; i <= maxOffset; i++) {
       const year = thisYear - i;
-      yearOptions.push(<option value={year}>{year}</option>);
+      yearOptions.push(<option>{year}</option>);
     }
 
-    const object = this.state.sister;
-    const isEnable =
-      object.email.length > 0 &&
-      object.fullname.length > 0 &&
-      object.password.length > 0 &&
-      object.phoneNumber.length > 0;
     return (
       <div style={background1}>
         <Example />
@@ -145,7 +140,7 @@ class RegisterSister extends Component {
           <div className="register">
             <CardTitle> BABYSISTER REGISTER </CardTitle>
             <FormGroup className="form-inline">
-              <Label>Phone Number: </Label>
+              <Label> Phone Number: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -165,7 +160,7 @@ class RegisterSister extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label>Fullname: </Label>
+              <Label> Firstname: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -175,11 +170,22 @@ class RegisterSister extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
+              <Label> Lastname: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="text"
+                id="3"
+                required
+              />
+            </FormGroup>
+            <FormGroup className="form-inline">
               <Label>Sex: </Label>
               <Input
+                style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="select"
-                id="6"
+                id="7"
                 required
               >
                 <option />
@@ -192,9 +198,11 @@ class RegisterSister extends Component {
               <Label>Year of Birth: </Label>
               <div onChange={this._handleChange} type="number" id="7" required>
                 <select
+                  style={{ width: "300px" }}
                   value={this.selectedYear}
                   onChange={this._handleYearChange}
                 >
+                  <option />
                   {yearOptions}
                 </select>
               </div>
@@ -205,7 +213,7 @@ class RegisterSister extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="text"
-                id="5"
+                id="6"
                 required
               />
             </FormGroup>
@@ -215,7 +223,7 @@ class RegisterSister extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="text"
-                id="4"
+                id="5"
                 required
               />
             </FormGroup>
@@ -225,7 +233,7 @@ class RegisterSister extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="text"
-                id="3"
+                id="4"
                 required
               />
             </FormGroup>
@@ -236,7 +244,7 @@ class RegisterSister extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="text"
-                id="8"
+                id="9"
               />
             </FormGroup>
             <FormGroup className="form-inline">
@@ -271,7 +279,6 @@ class RegisterSister extends Component {
             </FormGroup>
 
             <Button
-              disabled={!isEnable}
               style={button}
               type="submit"
               onClick={this._handleRegister}

@@ -25,7 +25,6 @@ var background1 = {
   backgroundAttachment: "fixed"
 };
 
-
 const button = {
   margin: "10px 0px 0px 0px"
 };
@@ -228,6 +227,7 @@ class RegisterParent extends Component {
             <FormGroup className="form-inline">
               <Label>Sex: </Label>
               <Input
+                style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="select"
                 id="7"
@@ -243,9 +243,11 @@ class RegisterParent extends Component {
               <Label> Year of birth: </Label>
               <div onChange={this._handleChange} type="number" id="8" required>
                 <select
+                  style={{ width: "300px" }}
                   value={this.selectedYear}
                   onChange={this._handleYearChange}
                 >
+                  <option />
                   {yearParentOptions}
                 </select>
               </div>{" "}
@@ -259,21 +261,28 @@ class RegisterParent extends Component {
                 id="9"
               />
             </FormGroup>
-            <h2>Baby's info:</h2>
+            <CardTitle>Baby's info:</CardTitle>
             <FormGroup className="form-inline">
               <Label>Baby's YoB: </Label>
               <div onChange={this._handleChange} type="number" id="10" required>
                 <select
+                  style={{ width: "300px" }}
                   value={this.selectedYear}
                   onChange={this._handleYearChange}
                 >
+                  <option />
                   {yearBabyOptions}
                 </select>
               </div>
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>Baby's gender: </Label>
-              <Input onChange={this._handleChange} type="select" id="11">
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="11"
+              >
                 <option />
                 <option>Male</option>
                 <option>Female</option>
