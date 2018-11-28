@@ -1,22 +1,53 @@
-import React, { Component } from 'react';
-import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import Nav from "../Nav";
+import begin from "../../img/begin.jpeg";
 
-class Register extends Component{
-    render(){
-        return(
-            <div className='container'>
-                <h1>Who you are ?? </h1>
-                <Link to={'/parent/register'}>
-                    <Button> Parent </Button>
-                </Link>
-                <Link to={'/sister/register'}> 
-                    <Button> Babysister </Button>
-                </Link>
-                
-            </div>
-        )
-    }
+var background1 = {
+  width: "100%",
+  height: "100vh",
+  backgroundImage: `url(${begin})`,
+  backgroundPosition: "bottom",
+  backgroundRepeat: "no-repeat bottom",
+  backgroundSize: "cover",
+  opacity: "0.9",
+  backgroundAttachment: "fixed"
+};
+
+const who = {
+  color: "white"
+};
+
+const button = {
+  margin: "10px"
+};
+
+class Register extends Component {
+  render() {
+    return (
+      <div>
+        <Nav />
+        <div style={background1} className="login-container">
+          <div>
+            <h1 style={who}>Who you are ?? </h1>
+            <Link to={"/parent/register"}>
+              <Button style={button} color="danger">
+                {" "}
+                Parent{" "}
+              </Button>
+            </Link>
+            <Link to={"/sister/register"}>
+              <Button style={button} color="danger">
+                {" "}
+                Babysister{" "}
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Register;
