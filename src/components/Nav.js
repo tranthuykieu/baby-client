@@ -30,18 +30,20 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar style={height} color="light" light expand="md">
-          <NavbarBrand href="/">BabioService</NavbarBrand>
+      <div className='container-navhome'>
+        <Navbar  style={height} color="" light expand="md">
+          <NavbarBrand href="/" className='logo-home'> BabioService</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/login"> Login </NavLink>
+                <NavLink href="/login"> 
+                  <Button className='btn-navhome' color="">Login</Button>
+                </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/register">
-                  <Button color="danger">Join us</Button>{" "}
+                  <Button  className='btn-navhome' color="" >Join us</Button>{" "}
                 </NavLink>
               </NavItem>
             </Nav>

@@ -20,7 +20,8 @@ const who = {
 };
 
 const button = {
-  margin: "10px"
+  margin: "10px",
+  
 };
 
 class Register extends Component {
@@ -32,13 +33,13 @@ class Register extends Component {
           <div>
             <h1 style={who}>Who you are ?? </h1>
             <Link to={"/parent/register"}>
-              <Button style={button} color="danger">
+              <Button className='btn-navhome' style={button} color="">
                 {" "}
                 Parent{" "}
               </Button>
             </Link>
             <Link to={"/sister/register"}>
-              <Button style={button} color="danger">
+              <Button className='btn-navhome' style={button} color="rgb(114, 174, 202)">
                 {" "}
                 Babysister{" "}
               </Button>

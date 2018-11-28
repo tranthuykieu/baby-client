@@ -1,3 +1,15 @@
+.logo-home {
+    margin-left: 5vh;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(114, 174, 202)
+}
+
+
+.btn-navhome {
+    background: rgb(114, 174, 202)
+}
+
+/*  */
 .container {
     width: 100%;
     max-width: 100%;

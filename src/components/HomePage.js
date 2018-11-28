@@ -48,7 +48,7 @@ class HomePage extends Component {
                     <h1 className="landing-cap">Trusted by family</h1>
                     <p className="para-cap">Taking care of your children at anytime</p>
                     <p className="para-cap">Education to future-proof your children</p>
-                    <a href="#solution">
+                    <a >
                         <button className="btn-explore" type="button"><span>Explore now</span></button>
                     </a>
                     </div>
