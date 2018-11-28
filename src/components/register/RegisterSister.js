@@ -37,7 +37,11 @@ class RegisterSister extends Component {
     sister: {
       phoneNumber: "",
       password: "",
-      fullname: "",
+      firstname: "",
+      lastname: "",
+      experience: "",
+      billingRate: "",
+      availability: "",
       city: "",
       district: "",
       address: "",
@@ -73,7 +77,10 @@ class RegisterSister extends Component {
     if (e.target.id == 8) preSister.age = e.target.value;
     if (e.target.id == 9) preSister.email = e.target.value;
     // if (e.target.id == 9) preSister.avatar = e.target.value;
-    if (e.target.id == 10) preSister.note = e.target.value;
+    if (e.target.id == 10) preSister.experience = e.target.value;
+    if (e.target.id == 11) preSister.billingRate = e.target.value;
+    if (e.target.id == 12) preSister.availability = e.target.value;
+    if (e.target.id == 13) preSister.note = e.target.value;
 
     this.setState({ sister: preSister });
   };
@@ -196,16 +203,16 @@ class RegisterSister extends Component {
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>Year of Birth: </Label>
-              <div onChange={this._handleChange} type="number" id="7" required>
-                <select
-                  style={{ width: "300px" }}
-                  value={this.selectedYear}
-                  onChange={this._handleYearChange}
-                >
-                  <option />
-                  {yearOptions}
-                </select>
-              </div>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="8"
+                required
+              >
+                <option onChange={this._handleYearChange} />
+                {yearOptions}
+              </Input>
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>City: </Label>
@@ -248,12 +255,59 @@ class RegisterSister extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label>Note: </Label>
+              <Label>Experience: </Label>
               <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="10"
+                required
+              >
+                <option />
+                <option>&lt; 6 months</option>
+                <option>6 months - 1 year</option>
+                <option>1 - 3 years</option>
+                <option>&gt; 3 years</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Billingrate: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="11"
+              >
+                <option />
+                <option>5 - 7 $/hour</option>
+                <option>7 - 9 $/hour</option>
+                <option>9 - 11 $/hour</option>
+                <option>11 - 13 $/hour</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Availability: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="12"
+              >
+                <option />
+                <option>Right now</option>
+                <option>Within a week</option>
+                <option>Within a month</option>
+                <option>More</option>
+              </Input>
+            </FormGroup>
+            <FormGroup className="form-inline">
+              <Label>Overview: </Label>
+              <Input
+                placeholder="Introduce about yourself..."
                 style={{ width: "300px", height: "150px" }}
                 onChange={this._handleChange}
                 type="textarea"
-                id="10"
+                id="13"
                 maxLenght="200"
               />
             </FormGroup>
