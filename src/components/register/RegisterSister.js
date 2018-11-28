@@ -39,6 +39,9 @@ class RegisterSister extends Component {
       password: "",
       firstname: "",
       lastname: "",
+      experience: "",
+      billingRate: "",
+      availability: "",
       city: "",
       district: "",
       address: "",
@@ -74,7 +77,10 @@ class RegisterSister extends Component {
     if (e.target.id == 8) preSister.age = e.target.value;
     if (e.target.id == 9) preSister.email = e.target.value;
     // if (e.target.id == 9) preSister.avatar = e.target.value;
-    if (e.target.id == 10) preSister.note = e.target.value;
+    if (e.target.id == 10) preSister.experience = e.target.value;
+    if (e.target.id == 11) preSister.billingRate = e.target.value;
+    if (e.target.id == 12) preSister.availability = e.target.value;
+    if (e.target.id == 13) preSister.note = e.target.value;
 
     this.setState({ sister: preSister });
   };
@@ -197,16 +203,16 @@ class RegisterSister extends Component {
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>Year of Birth: </Label>
-              <div onChange={this._handleChange} type="number" id="7" required>
-                <select
-                  style={{ width: "300px" }}
-                  value={this.selectedYear}
-                  onChange={this._handleYearChange}
-                >
-                  <option />
-                  {yearOptions}
-                </select>
-              </div>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="select"
+                id="8"
+                required
+              >
+                <option onChange={this._handleYearChange} />
+                {yearOptions}
+              </Input>
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>City: </Label>
@@ -285,7 +291,7 @@ class RegisterSister extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="select"
-                id="11"
+                id="12"
               >
                 <option />
                 <option>Right now</option>

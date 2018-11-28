@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NavMainPage from "../components/NavMainPage";
-import AvailableSister from './AvailableSister';
+import AvailableSister from "./AvailableSister";
 
 class MainPage extends Component {
-
-
   componentDidMount() {
     axios
       .get("http://localhost:1998/api/sisters")
@@ -19,10 +17,9 @@ class MainPage extends Component {
   render() {
     return (
       <div>
-        <NavMainPage/>
+        <NavMainPage />
         <div>
           {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
-
         </div>
       </div>
     );
