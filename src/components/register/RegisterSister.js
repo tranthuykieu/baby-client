@@ -294,10 +294,9 @@ class RegisterSister extends Component {
                 id="12"
               >
                 <option />
-                <option>Right now</option>
-                <option>Within a week</option>
-                <option>Within a month</option>
-                <option>More</option>
+                <option>All day</option>
+                <option>Half a day</option>
+                <option>Only weekend</option>
               </Input>
             </FormGroup>
             <FormGroup className="form-inline">
