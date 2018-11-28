@@ -25,6 +25,7 @@ var background1 = {
   backgroundAttachment: "fixed"
 };
 
+
 const button = {
   margin: "10px 0px 0px 0px"
 };
@@ -67,13 +68,14 @@ class RegisterParent extends Component {
     console.log("id: " + e.target.id);
     if (e.target.id == 0) preParent.phoneNumber = e.target.value;
     if (e.target.id == 1) preParent.password = e.target.value;
-    if (e.target.id == 2) preParent.fullname = e.target.value;
-    if (e.target.id == 3) preParent.city = e.target.value;
-    if (e.target.id == 4) preParent.district = e.target.value;
-    if (e.target.id == 5) preParent.address = e.target.value;
-    if (e.target.id == 6) preParent.sex = e.target.value;
-    if (e.target.id == 7) preParent.yearOfBirth = e.target.value;
-    if (e.target.id == 8) preParent.email = e.target.value;
+    if (e.target.id == 2) preParent.firstname = e.target.value;
+    if (e.target.id == 3) preParent.lastname = e.target.value;
+    if (e.target.id == 4) preParent.city = e.target.value;
+    if (e.target.id == 5) preParent.district = e.target.value;
+    if (e.target.id == 6) preParent.address = e.target.value;
+    if (e.target.id == 7) preParent.sex = e.target.value;
+    if (e.target.id == 8) preParent.yearOfBirth = e.target.value;
+    if (e.target.id == 9) preParent.email = e.target.value;
     // if (e.target.id == 9) preParent.avatar = e.target.files[0].name;
     if (e.target.id == 10) preParent.babyAge = e.target.value;
     if (e.target.id == 11) preParent.babyGender = e.target.value;
@@ -177,7 +179,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label> Fullname: </Label>
+              <Label> Firstname: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -187,7 +189,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label> City: </Label>
+              <Label> Lastname: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -197,7 +199,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label>District: </Label>
+              <Label> City: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -207,7 +209,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label> Address: </Label>
+              <Label>District: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -217,11 +219,21 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <FormGroup className="form-inline">
+              <Label> Address: </Label>
+              <Input
+                style={{ width: "300px" }}
+                onChange={this._handleChange}
+                type="text"
+                id="6"
+                required
+              />
+            </FormGroup>
+            <FormGroup className="form-inline">
               <Label>Sex: </Label>
               <Input
                 onChange={this._handleChange}
                 type="select"
-                id="6"
+                id="7"
                 required
               >
                 <option />
@@ -232,7 +244,7 @@ class RegisterParent extends Component {
             </FormGroup>
             <FormGroup className="form-inline">
               <Label> Year of birth: </Label>
-              <div onChange={this._handleChange} type="number" id="7" required>
+              <div onChange={this._handleChange} type="number" id="8" required>
                 <select
                   value={this.selectedYear}
                   onChange={this._handleYearChange}
@@ -247,7 +259,7 @@ class RegisterParent extends Component {
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
                 type="text"
-                id="8"
+                id="9"
               />
             </FormGroup>
             <h2>Baby's info:</h2>
