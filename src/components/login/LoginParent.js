@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 import {
   FormGroup,
   Form,
@@ -13,7 +13,6 @@ import {
 import Example from "../Nav";
 import begin from "../../img/begin.jpeg";
 // axios.defaults.withCredentials = true;
-
 
 var background1 = {
   width: "100%",
@@ -31,36 +30,41 @@ const button = {
 };
 
 class LoginParent extends Component {
+  state = {
+    parent: {
+      phoneNumber: "",
+      password: ""
+    }
+  };
 
-  _onChangePhoneNumber = (e) => {
-    this.setState({ phoneNumber: e.target.value })
-    console.log(this.state);
-    // this.props.setSiginValue(e.target.value);
-  }
+  _onChangeHandler = (e) => {
+    var preParent = this.state.parent;
+    if (e.target.id === "1") preParent.phoneNumber = e.target.value;
+    if (e.target.id === "2") preParent.password = e.target.value;
+    this.setState({ parent: preParent });
+  };
 
-  _oncChangePassword = (e) => {
-    this.setState({ password: e.target.value })
-    console.log(this.state);
-  }
-
-  _onSubmit = (e) => { 
+  _onSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:1998/api/parent/login', this.state )
-    .then(res => {
-      console.log('Login successful');
-      console.log(res);
-      this.props.history.push('/mainpage');
-    })
-    .catch(err => {
-      alert('Login fail !');
-    });
-  }
+    console.log("phone number: " + this.state.parent.phoneNumber);
+    console.log("password " + this.state.parent.password);
+    axios
+      .post("http://localhost:1998/api/parent/login", this.state.parent)
+      .then((res) => {
+        console.log("Login successful");
+        console.log(res);
+        this.props.history.push("/mainpage");
+      })
+      .catch((err) => {
+        alert("Login fail !");
+      });
+  };
 
   render() {
     return (
       <div style={background1}>
         <Example />
-        <div  className="login-container">
+        <div className="login-container">
           <div className="login">
             <FormGroup>
               <CardTitle> PARENT LOGIN </CardTitle>
@@ -68,23 +72,29 @@ class LoginParent extends Component {
                 <Nav>
                   <Label> Phone number: </Label>
                   <Input
-                    onChange={this._onChangePhoneNumber}
+                    onChange={this._onChangeHandler}
                     type="number"
                     if=""
+                    id="1"
                     required
                   />
                 </Nav>
                 <Nav>
                   <Label> Password: </Label>
                   <Input
-                    onChange={this._oncChangePassword}
+                    onChange={this._onChangeHandler}
                     type="password"
+                    id="2"
                     required
                   />
                 </Nav>
 
-                <Button onClick={this._onSubmit} style={button} color="primary" type='submit'>
-                  
+                <Button
+                  onClick={this._onSubmit}
+                  style={button}
+                  color="primary"
+                  type="submit"
+                >
                   Login
                 </Button>
               </Form>

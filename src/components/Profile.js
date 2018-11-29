@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
+import NavMainPage from "../components/NavMainPage";
 import axios from "axios";
 
 var background = {
@@ -43,6 +44,7 @@ class Profile extends Component {
     const sister = this.state.sister;
     return (
       <div>
+        <NavMainPage />
         <Container style={background}>
           <Row>
             <Col>
