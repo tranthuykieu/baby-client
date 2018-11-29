@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 import {
   FormGroup,
   Form,
@@ -9,7 +9,6 @@ import {
   Nav,
   Button
 } from "reactstrap";
-
 
 import Example from "../Nav";
 import begin from "../../img/begin.jpeg";
@@ -31,39 +30,42 @@ const button = {
 
 class LoginSister extends Component {
   state = {
-    parent: {}
+    sister: {
+      phoneNumber: "",
+      password: ""
+    }
   };
 
-  _onChangePhoneNumber = (e) => {
-    this.setState({ phoneNumber: e.target.value })
-    console.log(this.state);
-    // this.props.setSiginValue(e.target.value);
-  }
+  _onChangeHandler = (e) => {
+    console.log("Value from event: " + e.target.value);
+    var preSister = this.state.sister;
+    if (e.target.id === "1") preSister.phoneNumber = e.target.value;
+    if (e.target.id === "2") preSister.password = e.target.value;
+    this.setState({ sister: preSister });
+  };
 
-  _oncChangePassword = (e) => {
-    this.setState({ password: e.target.value })
-    console.log(this.state);
-  }
-
-  _onSubmit = (e) => { 
+  _onSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:1998/api/sister/login', this.state )
-    .then(res => {
-      console.log('Login successful');
-      console.log(res);
-      this.props.history.push('/mainpage');
-      alert('Welcome to BabioService !');
-    })
-    .catch(err => {
-      alert('Login fail !');
-    });
-  }
+    console.log("phone number: " + this.state.sister.phoneNumber);
+    console.log("password " + this.state.sister.password);
+    axios
+      .post("http://localhost:1998/api/sister/login", this.state.sister)
+      .then((res) => {
+        console.log("Login successful");
+        console.log(res);
+        this.props.history.push("/mainpage");
+        alert("Welcome to BabioService !");
+      })
+      .catch((err) => {
+        alert("Login fail !");
+      });
+  };
 
   render() {
     return (
       <div style={background1}>
         <Example />
-        <div  className="login-container">
+        <div className="login-container">
           <div className="login">
             <FormGroup>
               <CardTitle> BABYSITTER LOGIN </CardTitle>
@@ -71,21 +73,28 @@ class LoginSister extends Component {
                 <Nav>
                   <Label> Phone number: </Label>
                   <Input
-                    onChange={this._onChangePhoneNumber}
+                    onChange={this._onChangeHandler}
                     type="number"
                     if=""
+                    id="1"
                     required
                   />
                 </Nav>
                 <Nav>
                   <Label> Password: </Label>
                   <Input
-                    onChange={this._oncChangePassword}
+                    onChange={this._onChangeHandler}
                     type="password"
+                    id="2"
                     required
                   />
                 </Nav>
-                <Button onChange={this._onSubmit} style={button} color="primary">
+                <Button
+                  onClick={this._onSubmit}
+                  style={button}
+                  color="primary"
+                  type="submit"
+                >
                   {" "}
                   Login{" "}
                 </Button>

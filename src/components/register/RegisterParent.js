@@ -67,6 +67,7 @@ class RegisterParent extends Component {
     var preParent = this.state.parent;
     console.log("id: " + e.target.id);
     if (e.target.id == 0) preParent.phoneNumber = e.target.value;
+    console.log(preParent.phoneNumber);
     if (e.target.id == 1) preParent.password = e.target.value;
     if (e.target.id == 2) preParent.firstname = e.target.value;
     if (e.target.id == 3) preParent.lastname = e.target.value;
@@ -145,8 +146,6 @@ class RegisterParent extends Component {
       yearBabyOptions.push(<option value={year}>{year}</option>);
     }
 
-    
-    
     return (
       <div style={background1}>
         <Example />
@@ -241,16 +240,15 @@ class RegisterParent extends Component {
             </FormGroup>
             <FormGroup className="form-inline">
               <Label> Year of birth: </Label>
-              <div onChange={this._handleChange} type="number" id="8" required>
-                <select
-                  style={{ width: "300px" }}
-                  value={this.selectedYear}
-                  onChange={this._handleYearChange}
-                >
-                  <option />
-                  {yearParentOptions}
-                </select>
-              </div>{" "}
+              <Input
+                onChange={this._handleChange}
+                type="select"
+                id="8"
+                required
+              >
+                <option onChange={this._handleYearChange} />
+                {yearParentOptions}
+              </Input>
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>Email: </Label>
@@ -264,16 +262,15 @@ class RegisterParent extends Component {
             <CardTitle>Baby's info:</CardTitle>
             <FormGroup className="form-inline">
               <Label>Baby's YoB: </Label>
-              <div onChange={this._handleChange} type="number" id="10" required>
-                <select
-                  style={{ width: "300px" }}
-                  value={this.selectedYear}
-                  onChange={this._handleYearChange}
-                >
-                  <option />
-                  {yearBabyOptions}
-                </select>
-              </div>
+              <Input
+                onChange={this._handleChange}
+                type="select"
+                id="10"
+                required
+              >
+                <option onChange={this._handleYearChange} />
+                {yearBabyOptions}
+              </Input>
             </FormGroup>
             <FormGroup className="form-inline">
               <Label>Baby's gender: </Label>
@@ -319,7 +316,7 @@ class RegisterParent extends Component {
               />
             </FormGroup>
             <Button
-              color='primary'
+              color="primary"
               style={button}
               type="submit"
               onClick={this._handleRegister}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NavMainPage from "../components/NavMainPage";
+import { Link } from "react-router-dom";
 import AvailableSister from "./AvailableSister";
 
 class MainPage extends Component {
@@ -20,23 +21,25 @@ class MainPage extends Component {
 
   render() {
     const allSisters = this.state.sisters.map((sister) => (
-      <AvailableSister
-        key={sister._id}
-        // sister={sister}
-        hashAvatar={sister.hashAvatar}
-        firstname={sister.firstname}
-        lastname={sister.lastname}
-        city={sister.city}
-        billingRate={sister.billingRate}
-        experience={sister.experience}
-        availability={sister.availability}
-        note={sister.note}
-      />
+      <Link to={"/profile/" + sister._id}>
+        <AvailableSister
+          key={sister._id}
+          // sister={sister}
+          hashAvatar={sister.hashAvatar}
+          firstname={sister.firstname}
+          lastname={sister.lastname}
+          city={sister.city}
+          billingRate={sister.billingRate}
+          experience={sister.experience}
+          availability={sister.availability}
+          note={sister.note}
+        />
+      </Link>
     ));
     return (
       <div>
         <NavMainPage />
-        <div className=''>
+        <div className="">
           {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
           {allSisters}
         </div>
