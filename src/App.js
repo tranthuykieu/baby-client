@@ -32,7 +32,7 @@ class App extends Component {
         <Route path="/parent/register" component={RegisterParent} />
         <Route path="/sister/register" component={RegisterSister} />
 
-        <Route path="/mainpage" component={MainPage} />
+        <Route path="/mainpage/:username" component={MainPage} />
       </Switch>
     );
   }
