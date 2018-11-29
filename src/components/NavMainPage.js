@@ -41,6 +41,10 @@ class NavMainPage extends Component {
         });
       }
 
+      _handleSearch = (e) => {
+        this.props.onSearchChanged(e.target.value);
+      }
+
       _onLogout = (e) => {
         axios.get('http://localhost:1998/api/parent/logout')
         .then((res) => {
@@ -61,7 +65,7 @@ class NavMainPage extends Component {
                                 </Col>
 
                                 <Col>
-                                    <Input type='text' placeholder='Search...'></Input>
+                                    <Input onChange={this._handleSearch} type='text' placeholder='Search...'></Input>
                                 </Col>
 
                                 <Col>

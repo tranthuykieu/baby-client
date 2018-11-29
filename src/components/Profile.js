@@ -11,7 +11,10 @@ var background = {
 var logo_icon = {
   display: "block",
   marginLeft: "auto",
-  marginRight: "auto"
+  marginRight: "auto",
+  borderRadius: "50%",
+  height: "200px",
+  width: "200px"
 };
 
 var user_name = {
@@ -55,39 +58,53 @@ class Profile extends Component {
                 className="img-thumbnail"
               />
             </Col>
+
             <Col>
-              <h1 style={user_name}>
-                {sister.firstname} {sister.lastname}
-              </h1>
-              <p>
-                {sister.city}, {sister.district}, {sister.address}
-              </p>
-              <p>Tel: {sister.phoneNumber} </p>
-              <p> Email: {sister.email} </p>
+                <Col>
+                  <h1 style={user_name}>
+                    {sister.firstname} {sister.lastname}
+                  </h1>
+                  
+                  <span className="font-weight-bold"> City:</span>  {sister.city}
+                  <br />
+                  <span className="font-weight-bold"> Address:</span> {sister.address},  {sister.district}
+                  <br />
+                  <span className="font-weight-bold"> Tel:</span> {sister.phoneNumber} 
+                  <br/ >
+                  <span className="font-weight-bold"> Email:</span> {sister.email}
+                </Col>
+                <Col>
+                  <span className="font-weight-bold"> Experience:</span> {sister.experience} 
+                  <br></br>
+                  <span className="font-weight-bold"> Billing Rate:</span> {sister.billingRate}
+                </Col>
+                <Col>
+                <span className="font-weight-bold"> Availability:</span> {sister.availability}
+                </Col>
             </Col>
-            <Col>
-              <h3>Experience</h3>
-              <p>{sister.experience}</p>
-              <h3>Billing Rate</h3>
-              <p>{sister.billingRate}</p>
-            </Col>
-            <Col>
-              <h3>Availability </h3>
-              <p> {sister.availability} </p>
-            </Col>
-            <Col>
-              <Button style={floatright} outline button="sencondary">
+            
+          </Row>
+
+          <Row>
+          
+              {/* <Button style={floatright} outline button="sencondary">
                 {" "}
                 Edit{" "}
-              </Button>
-            </Col>
+              </Button> */}
+            
           </Row>
+
+          <Row>
+          <h3>Overview: </h3>
+          <p>{sister.note}</p>
+          </Row>
+
+
         </Container>
 
-        <Container>
-          <h3>Overview </h3>
-          <p>{sister.note}</p>
-        </Container>
+        
+          
+        
       </div>
     );
   }
