@@ -23,6 +23,7 @@ class NavMainPage extends Component {
     super(props);
     this.toggleNav = this.toggleNav.bind(this);
 
+
     this.state = {
       isOpen: false
     };
@@ -38,6 +39,7 @@ class NavMainPage extends Component {
       this.props.history.push("/");
     });
   };
+
 
   render() {
     return (
