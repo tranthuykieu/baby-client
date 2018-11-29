@@ -64,17 +64,6 @@ class NavMainPage extends Component {
                     Log out
                   </Button>
                 </Col>
-
-                <Col>
-                  <Button
-                    disabled
-                    color="transparent"
-                    style={{ float: "left" }}
-                  >
-                    {" "}
-                    {this.props.username}
-                  </Button>
-                </Col>
               </Col>
             </Row>
           </Nav>

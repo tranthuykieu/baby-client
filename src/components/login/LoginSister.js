@@ -33,9 +33,7 @@ class LoginSister extends Component {
     sister: {
       phoneNumber: "",
       password: ""
-    },
-    userid: "",
-    username: ""
+    }
   };
 
   _onChangeHandler = (e) => {
@@ -55,18 +53,8 @@ class LoginSister extends Component {
       .then((res) => {
         console.log("Login successful");
         console.log(res);
-        this.setState({ userid: res.data.sisterId });
-        axios
-          .get("http://localhost:1998/api/sisters/" + this.state.userid)
-          .then((data) => {
-            console.log(this.state.userid);
-            console.log(data.data.sisterFound);
-            this.props.history.push(
-              "/mainpage/" + data.data.sisterFound.firstname
-            );
-          })
-          .catch((err) => console.error(err));
-        // const sister = res;
+        this.props.history.push("/mainpage");
+        alert("Welcome to BabioService !");
       })
       .catch((err) => {
         alert("Login fail !");

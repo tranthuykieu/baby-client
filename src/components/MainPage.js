@@ -21,10 +21,7 @@ class MainPage extends Component {
 
   render() {
     const allSisters = this.state.sisters.map((sister) => (
-      <Link
-        to={"/profile/" + sister._id}
-        params={{ username: sister.firstname }}
-      >
+      <Link to={"/profile/" + sister._id}>
         <AvailableSister
           key={sister._id}
           // sister={sister}
@@ -41,10 +38,7 @@ class MainPage extends Component {
     ));
     return (
       <div>
-        <NavMainPage
-          history={this.props.history}
-          username={this.props.match.params.username}
-        />
+        <NavMainPage history={this.props.history} />
         <div className="">
           {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
           {allSisters}

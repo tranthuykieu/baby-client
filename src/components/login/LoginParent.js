@@ -34,11 +34,9 @@ class LoginParent extends Component {
     parent: {
       phoneNumber: "",
       password: ""
-    },
-    userid: "",
-    username: ""
+    }
   };
-  _onFindUser = (e) => {};
+
   _onChangeHandler = (e) => {
     var preParent = this.state.parent;
     if (e.target.id === "1") preParent.phoneNumber = e.target.value;
@@ -55,17 +53,7 @@ class LoginParent extends Component {
       .then((res) => {
         console.log("Login successful");
         console.log(res);
-        this.setState({ userid: res.data.parentId });
-        axios
-          .get("http://localhost:1998/api/parents/" + this.state.userid)
-          .then((data) => {
-            console.log(data.data.parentFound);
-            this.props.history.push(
-              "/mainpage/" + data.data.parentFound.firstname
-            );
-          })
-          .catch((err) => console.error(err));
-        // const parent = res;
+        this.props.history.push("/mainpage");
       })
       .catch((err) => {
         alert("Login fail !");
