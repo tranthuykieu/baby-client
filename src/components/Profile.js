@@ -20,7 +20,6 @@ var logo_icon = {
 var user_name = {
   fontSize: "1.5rem"
 };
-
 var floatright = {
   float: "right"
 };
@@ -47,7 +46,7 @@ class Profile extends Component {
     const sister = this.state.sister;
     return (
       <div>
-        <NavMainPage />
+        <NavMainPage history={this.props.history} />
         <Container style={background}>
           <Row>
             <Col>
