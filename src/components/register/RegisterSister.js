@@ -264,14 +264,18 @@ class RegisterSister extends Component {
                 required
               >
                 <option />
-                <option>&lt; 6 months</option>
-                <option>6 months - 1 year</option>
-                <option>1 - 3 years</option>
-                <option>&gt; 3 years</option>
+                <option> 0 </option>
+                <option> 6 months</option>
+                <option> 1 year </option>
+                <option> 2 years</option>
+                <option> 3 years</option>
+                <option> 4 years</option>
+                <option> 5 years</option>
+                <option> &gt; 5 years</option>
               </Input>
             </FormGroup>
             <FormGroup className="form-inline">
-              <Label>Billingrate: </Label>
+              <Label>Billing Rate: </Label>
               <Input
                 style={{ width: "300px" }}
                 onChange={this._handleChange}
@@ -279,10 +283,10 @@ class RegisterSister extends Component {
                 id="11"
               >
                 <option />
-                <option>5 - 7 $/hour</option>
-                <option>7 - 9 $/hour</option>
-                <option>9 - 11 $/hour</option>
-                <option>11 - 13 $/hour</option>
+                <option>5 - 7 USD/hour</option>
+                <option>7 - 9 USD/hour</option>
+                <option>9 - 11 USD/hour</option>
+                <option>11 - 13 USD/hour</option>
               </Input>
             </FormGroup>
             <FormGroup className="form-inline">
@@ -295,7 +299,8 @@ class RegisterSister extends Component {
               >
                 <option />
                 <option>All day</option>
-                <option>Half a day</option>
+                <option>Only morning</option>
+                <option>Only afternoon</option>
                 <option>Only weekend</option>
               </Input>
             </FormGroup>
@@ -307,7 +312,7 @@ class RegisterSister extends Component {
                 onChange={this._handleChange}
                 type="textarea"
                 id="13"
-                maxLenght="200"
+                maxLenght="300"
               />
             </FormGroup>
             <FormGroup className="form-inline">

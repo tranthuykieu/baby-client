@@ -60,9 +60,7 @@ class MainPage extends Component {
     ));
     return (
       <div>
-
-        <NavMainPage history={this.props.history} />
-
+        <NavMainPage history={this.props.history}/>
         <div className="">
           {/* {this.state.sisters.length > 0 ? this.state.sisters[0].fullname : ""} */}
           {allSisters}

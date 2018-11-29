@@ -15,7 +15,7 @@ var floatright = {
 var main_nav = {
   height: "9vh",
   padding: "10px",
-  background: "#e2e2e2"
+  background: "rgb(110, 170, 226)"
 };
 
 class NavMainPage extends Component {
